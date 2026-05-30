@@ -24,7 +24,7 @@ export default function Calendar({
         <button
           key={day.date}
           className={
-            selectedDate === day.date ? "day-button active-day" : "day-button"
+            selectedDate === day.date ? "calendar-day active-day" : "calendar-day"
           }
           onClick={() => setSelectedDate(day.date)}
         >

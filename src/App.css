@@ -49,7 +49,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.day-button {
+.calendar-day {
   width: 50px;
   padding: 8px 12px;
 
@@ -70,16 +70,16 @@
   transition: 0.2s ease;
 }
 
-.day-button:not(.active-day):hover {
+.calendar-day:not(.active-day):hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
-.day-button span {
+.calendar-day span {
   font-size: 12px;
   opacity: 0.6;
 }
 
-.day-button strong {
+.calendar-day strong {
   font-size: 16px;
 }
 
@@ -462,7 +462,163 @@
 }
 /* #endregion */
 
+/* #region TODO ITEM EDITING */
+.edit-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.064);
+  color: #cdc3baf6;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.todo-item .edit-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.edit-button:hover {
+  transform: translateY(-1px);
+}
+
+.todo-item:hover .edit-button {
+  opacity: 1;
+}
+/* #endregion */
+
 /* #region media queries */
+
+@media (max-width: 430px) {
+  .background {
+    padding: 70px 30px;
+    align-items: flex-start;
+  }
+
+  .app-layout {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .calendar-strip {
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .calendar-day {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .calendar-day span {
+    font-size: 10px;
+    opacity: 0.6;
+  }
+
+  .calendar-day strong {
+    font-size: 14px;
+  }
+
+  .calendar-button {
+    height: 50px;
+  }
+
+  .calendar-day,
+  .calendar-button {
+    width: 43px;
+    height: 50px;
+    padding: 0;
+  }
+
+  .todo-card {
+    width: 100%;
+  }
+
+  .todo-header {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .todo-title {
+    font-size: 22px;
+  }
+
+  .todo-status {
+    width: 220px;
+    font-size: 11px;
+  }
+
+  .task-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .task-input {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+
+  .task-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 90px;
+    height: 35px;
+    margin: 0;
+  }
+  
+  .todo-list-container {
+    height: 370px;
+  }
+
+  .todo-item {
+    gap: 10px;
+    padding: 12px;
+
+    font-size: 12px;
+  }
+
+  .delete-button {
+    margin-left: 4px;
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .todo-item .edit-button {
+    opacity: 1;
+    font-size: 9px;
+  }
+
+  .todo-actions {
+    gap: 4px;
+  }
+
+  .custom-checkbox {
+    width: 10px;
+    height: 10px;
+  }
+
+  .drag-handle {
+    touch-action: none;
+    cursor: grab;
+  }
+}
 
 @media (max-width: 760px) {
   .app-layout {
@@ -509,34 +665,5 @@
   .calendar-next-button:hover {
     transform: translateX(2px);
   }
-}
-/* #endregion */
-
-/* #region TODO ITEM EDITING */
-.edit-input {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: rgba(255, 255, 255, 0.064);
-  color: #cdc3baf6;
-  padding: 8px 10px;
-  border-radius: 8px;
-  font-size: 15px;
-}
-
-.todo-item .edit-button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  opacity: 0;
-  transition: 0.2s;
-}
-
-.edit-button:hover {
-  transform: translateY(-1px);
-}
-
-.todo-item:hover .edit-button {
-  opacity: 1;
 }
 /* #endregion */
